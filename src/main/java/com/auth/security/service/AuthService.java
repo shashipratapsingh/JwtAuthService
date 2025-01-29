@@ -1,12 +1,16 @@
 package com.auth.security.service;
 
+import com.auth.entity.Users;
+import com.auth.repository.UsersRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
@@ -33,7 +37,7 @@ public class AuthService {
         return claimsResolver.apply(claims);
     }
 
-    private Claims extractAllClaims(String token) {
+    public Claims extractAllClaims(String token) {
         return Jwts
                 .parserBuilder()
                 .setSigningKey(getSignKey())
@@ -58,12 +62,15 @@ public class AuthService {
         return createToken(claims, username);
     }
 
-
+    @Autowired
+    private UsersRepository usersRepository;
 
     private String createToken(Map<String, Object> claims, String username) {
-
+        Users user = usersRepository.findByEmail(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
         return Jwts.builder()
                 .setClaims(claims)
+                .claim("role", user.getRoles().name()) // ✅ Add user role to JWT
                 .setSubject(username).setHeaderParam("typ","JWT")
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis()+1000*60*60))

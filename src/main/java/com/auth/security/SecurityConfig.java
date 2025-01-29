@@ -41,6 +41,9 @@ public class SecurityConfig {
                                 "/auth/**",
                                 "/error")
                         .permitAll()
+                        .requestMatchers("/admin/**").hasRole("Admin") // Admin-only APIs
+                        .requestMatchers("/manager/**").hasAnyRole("Admin", "Manager") // Manager & Admin
+                        .requestMatchers("/user/**").hasAnyRole("Admin", "Manager", "User") // All roles
                         .anyRequest()
                         .authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

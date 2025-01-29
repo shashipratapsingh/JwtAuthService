@@ -3,11 +3,14 @@ package com.auth.security.service;
 import com.auth.entity.Users;
 import com.auth.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -17,8 +20,15 @@ public class BhavnaCopsUserService implements UserDetailsService {
     private UsersRepository usersRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<Users> users = usersRepository.findByEmail(username);
-        return users.map(BhavanaCorpUserDetails::new).orElseThrow(() -> new UsernameNotFoundException("user not found for email :" + username));
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Users user = usersRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        System.out.println("Loaded User from DB: " + user.getEmail() + " with Role: " + user.getRoles());
+
+        // ✅ Convert role to `ROLE_` format
+        List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_" + user.getRoles().name())); // ✅ Add "ROLE_" prefix
+
+        return new org.springframework.security.core.userdetails.User(
+                user.getEmail(), user.getPassword(), authorities);
     }
 }
