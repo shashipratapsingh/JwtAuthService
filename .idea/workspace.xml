@@ -5,21 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7e64dd6-e661-498b-9c6b-0a03df265aa2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/com/auth/controller/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/auth/controller/ManagerController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/auth/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/auth/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auth/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/auth/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auth/controller/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/auth/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auth/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/auth/security/JWT/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auth/security/JWT/JwtFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/auth/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auth/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/auth/security/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auth/security/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/auth/security/service/BhavnaCopsUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auth/security/service/BhavnaCopsUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/auth/security/service/BhavnaCopsUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/auth/security/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AuthServices-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/AuthServices-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AuthServices-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/AuthServices-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/auth/entity/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/auth/entity/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/auth/model/request/UsersRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/auth/model/request/UsersRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/auth/model/response/UsersResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/auth/model/response/UsersResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/auth/security/JWT/JwtFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/auth/security/JWT/JwtFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/auth/security/JWT/JwtRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/auth/security/JWT/JwtRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/auth/security/JWT/JwtResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/auth/security/JWT/JwtResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/auth/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/auth/security/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/auth/security/service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/auth/security/service/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/auth/security/service/BhavnaCopsUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/auth/security/service/BhavnaCopsUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/auth/security/service/BhavnaCopsUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2025-01-19T12-08-38_183.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.auth.AuthServicesApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.auth.AuthServicesApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.auth.AuthServicesApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.auth.AuthServicesApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +74,7 @@
     "Application.AuthServicesApplication.executor": "Run",
     "Maven.AuthServices [clean,install].executor": "Run",
     "Maven.AuthServices [clean].executor": "Run",
+    "Maven.AuthServices [deploy].executor": "Run",
     "Maven.AuthServices [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",

@@ -1,7 +1,7 @@
 package com.auth.security;
 
 import com.auth.security.JWT.JwtFilter;
-import com.auth.security.service.BhavnaCopsUserService;
+import com.auth.security.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -55,7 +55,7 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetails(){
-        return new BhavnaCopsUserService();
+        return new UsersService();
     }
 
     @Bean

@@ -1,7 +1,7 @@
 package com.auth.security.JWT;
 
 import com.auth.security.service.AuthService;
-import com.auth.security.service.BhavnaCopsUserService;
+import com.auth.security.service.UsersService;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -26,7 +26,7 @@ public class JwtFilter extends OncePerRequestFilter {
     private AuthService authService;
 
     @Autowired
-    private BhavnaCopsUserService service;
+    private UsersService service;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
